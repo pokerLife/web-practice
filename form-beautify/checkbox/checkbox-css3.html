@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css3美化checkbox</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #ccc;
+    }
+
+    .mycheck input[type='checkbox'] {
+        display: none;
+    }
+
+    .mycheck label {
+        display: inline-block;
+        position: relative;
+        width: 60px;
+        height: 30px;
+        border: 1px solid #bdc3c7;
+        border-radius: 60px;
+    }
+
+    .mycheck label::before {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 20px;
+        height: 20px;
+        content: '';
+        display: inline-block;
+        background-color: #bdc3c7;
+        border-radius: 50%;
+    }
+
+    /** 切换 **/
+    .mycheck :checked ~ label {
+        background-color: #26b22b;
+        border-color: #26b22b;
+    }
+
+    .mycheck :checked ~ label::before {
+        left: 35px;
+        background-color: #fff;
+    }
+
+    .mycheck label {
+        transition: all .5s;
+    }
+
+    .mycheck label::before {
+        transition: all .5s;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>css美化checkbox</h2>
+        <div class="mycheck">
+            <input type="checkbox" name="" id="check1">
+            <label for="check1"></label>
+        </div>
+    </div>
+</body>
+<script>
+    let mycheck = document.querySelector('#check1');
+    mycheck.addEventListener('click',(e)=>{
+        var e = e || window.event;
+        console.log(e.target.checked)
+    });
+</script>
+</html>
