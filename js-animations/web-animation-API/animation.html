@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WEB Animation API</title>
+</head>
+<style>
+    .container {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        box-shadow: 2px 4px 5px #ccc;
+    }
+
+    .css-animation,
+    .js-animation {
+        padding-left: 20px;
+        color: #fff;
+    }
+
+    .css-animation {
+        width: 200px;
+        height: 200px;
+        margin: 40px;
+        background-color: red;
+    }
+
+    .js-animation {
+        width: 200px;
+        height: 200px;
+        margin: 40px;
+        background-color: #4dee1c;
+    }
+
+    @keyframes move {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(220px);
+        }
+    }
+
+    #ele1 {
+        animation: move 2s ease-in infinite;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="css-animation" id="ele1">我是css</div>
+        <div class="js-animation" id="ele2">我是web animation</div>
+        <button id="play">播放</button> <button id="pause">暂停</button>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const $ele2 = document.getElementById("ele2");
+            const $playBtn = document.getElementById('play');
+            const $pauseBtn = document.getElementById('pause');
+            let animation = $ele2.animate([{
+                transform: 'translateX(0)',
+            }, {
+                transform: 'translateX(220px)',
+            }], {
+                duration: 2000,
+                // 循环执行
+                iterations: Infinity 
+            })
+
+            /* 播放动画 */
+            $playBtn.addEventListener('click', (e) => {
+                animation.play();
+            })
+
+            /* 暂停动画 */
+            $pauseBtn.addEventListener('click', (e) => {
+                animation.pause();
+            })
+
+            /**
+             * 通过getAnimation可以拿到一个元素的所有动画实例
+             * 即使只有一个动画也会返回一个数组
+             */
+            var animations = $ele2.getAnimations();
+
+            /* 监听动画执行完毕onfinsh */
+            animation.onfinish = () => {
+                console.log("执行完毕!");
+            }
+
+            /** 
+             * 如果想知道一个元素上的所有动画全部执行完毕，
+             * 使用finished属性，这是一个Promise对象
+             */
+            Promise.all(
+                animations.map(
+                    animation => animation.finished
+                ).then(
+                    console.log("所有动画执行完毕！")
+                )
+            )
+
+            /**
+             * 通过只读属性playState拿到正在播放的动画 
+             * playState可选值：
+             * panding(挂起) running(运行) paused(暂停) finished(完成) idle(无法解析)
+             */
+            animations.forEach(
+                animation => animation.pause()
+            )
+        }
+    </script>
+</body>
+
+</html>
