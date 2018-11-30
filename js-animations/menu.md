@@ -1,6 +1,6 @@
 # :book: 目录
 
-1.:octocat: 可控的css动画 Web Ainimation API替代
+:octocat: 1. 可控的css动画 Web Ainimation API替代
 
 [**在线预览**](https://pokerlife.github.io/rookie-practice/js-animations/web-animation-API/animation.html)
 [**查看源码**](./web-animation-API/animation.html)
