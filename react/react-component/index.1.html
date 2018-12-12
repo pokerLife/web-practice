@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jsx</title>
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+    <script src="./babel.min.js"></script>
+</head>
+
+<body>
+    <div id="myReact"></div>
+
+    <script type="text/babel">
+        class MyTitle extends React.Component {
+            constructor(...args) {
+                super(...args);
+                this.state = {
+                    name: '访问者'
+                }
+            }
+            
+            componentWillMount(){
+                console.log('组件加载前调用')
+            }
+
+            componentDidMount() {
+                console.log('组件加载完成调用');
+            }   
+            
+            componentWillUpdate() {
+                console.log('组件加载完成调用');
+            }
+
+            change(e) {
+                let name = e.target.value;
+                this.setState({
+                    name: name
+                });
+            }
+
+            render() {
+            return <div>
+                <input type="text" onChange={this.change.bind(this)} />
+                <p>hello, {this.state.name}</p>
+            </div>;
+            }
+        }
+
+        ReactDOM.render(
+        <MyTitle/>,
+        document.getElementById('myReact')
+    );
+    </script>
+</body>
+
+</html>
