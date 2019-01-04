@@ -9,3 +9,10 @@ yarn install
 ```
 ## Sept2: 修改key
 > 项目src --- config --- config.js
+## Sept3: 启动
+```
+yarn serve
+```
+## Demo效果
+![demo](https://github.com/pokerLife/rookie-practice/blob/master/vue/sgcc-app-bus/map.png)
+
