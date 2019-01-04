@@ -3,30 +3,9 @@
 ## 获取高德地图API key 
 > 高德开放平台：https://lbs.amap.com/
 
-## Project setup
+## Sept1：安装依赖
 ```
 yarn install
 ```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Sept2: 修改key
+> 项目src --- config --- config.js
