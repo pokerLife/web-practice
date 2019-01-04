@@ -14,5 +14,4 @@ yarn install
 yarn serve
 ```
 ## Demo效果
-![demo](https://github.com/pokerLife/rookie-practice/blob/master/vue/sgcc-app-bus/map.png =200x100)
-
+<img src="https://github.com/pokerLife/rookie-practice/blob/master/vue/sgcc-app-bus/map.png" width="200"/>
