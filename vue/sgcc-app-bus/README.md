@@ -1,4 +1,7 @@
-# sgcc-app-bus
+# 高德地图API+VUE简单实现
+
+## 获取高德地图API key 
+> 高德开放平台：https://lbs.amap.com/
 
 ## Project setup
 ```
