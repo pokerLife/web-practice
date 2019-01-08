@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>邀请卡实例</title>
+</head>
+<style>
+
+    .set-option {  
+    float: left;
+    width: 400px;
+}
+
+.set-option .text {
+    width: 200px;
+    height:40px;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.set-option td {
+    padding: 10px 0;
+}
+.set-option td:first-child {
+    text-align: right;
+    padding-right: 10px;
+}
+.set-option p {
+    margin: 0;
+    line-height: 16px;
+}
+.check-box {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    vertical-align: top;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+.btn-all {
+    background: #f90;
+}
+.btn-save {
+    background: #09f;
+}
+.btn-download {
+    background: #4CAF50;
+}
+  
+</style>
+
+<body>
+    <div>
+        <div class="set-option">
+            <table>
+                <tr>
+                    <td>画布尺寸</td>
+                    <td><input type="text" class="text" id="state"></td>
+                </tr>
+                <tr>
+                    <td>背景图片</td>
+                    <td><input type="file" name="bg" id="file"></td>
+                </tr>
+                <tr>
+                    <td>用户名</td>
+                    <td><input type="text" name="" id="username" class="text"></td>
+                </tr>
+                <tr>
+                    <td>用户x坐标</td>
+                    <td>
+                        <input type="number" class="text" id="text-option-x" /></br>
+                        <p>
+                            <input type="checkbox" class="check-box" value="1" id="is-center-x">
+                            居中显示
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        用户名y坐标
+                    </td>
+                    <td>
+                        <input type="number" class="text" id="text-option-y" /></br>
+                        <p><input type="checkbox" class="check-box" value="1" id="is-center-y">
+                            居中显示
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        用户名字体大小
+                    </td>
+                    <td><input type="number" class="text" id="text-size" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        文字颜色
+                    </td>
+                    <td><input type="text" class="text" id="text-color" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        图片类型
+                    </td>
+                    <td>
+                        <select type="text" class="text" id="img-type">
+                            <option value="jpg">
+                                jpg
+                            </option>
+                            <option value="png">
+                                png
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <button id="save-image" class="btn-save">
+                效果预览
+            </button>
+            <button id="download-img" class="btn-download">
+                下载当前图片
+            </button>
+            <button id="download-all" class="btn-all">
+                批量导出
+            </button>
+        </div>
+        <div class="show-canvas">
+            <canvas width="200" height="200" id="thecanvas"></canvas>
+        </div>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js"></script> -->
+    <script src="./main.js"></script>
+</body>
+
+</html>
