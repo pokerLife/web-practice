@@ -67,3 +67,26 @@ size.addEventListener("blur", function () {
         //重新画图
         draw(option);
 });
+
+// 改变图片
+var file = document.getElementById('file'), imageFile, imageData;
+file.addEventListener('change', (e)=> {
+    imageFile = e.target.files[0];
+    // 把图片转换成base64
+    var reader = new FileReader();
+    reader.readAsDataURL(imageFile);
+    reader.onload = function(e){
+        imageData = this.result;
+        option.img = imageData;
+        draw(option);
+    }
+})
+
+
+//用户名 
+var userName = document.getElementById("username");
+userName.addEventListener('blur',(e)=>{
+    var _name = userName.value.trim();
+    option.text = _name;
+    draw(option);
+})
