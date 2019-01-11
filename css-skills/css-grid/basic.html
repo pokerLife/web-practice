@@ -9,6 +9,8 @@
 <style>
     body{  
         text-align: center;
+        max-width: 750px;
+        margin: 0 auto;
     }
     #content{
         color: #fff;
@@ -24,11 +26,65 @@
     #content div:nth-child(even){
         background: skyblue;
     }
+
+    #content2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #content3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 60px);
+    }
+    #content2 div, 
+    #content3 div{
+        background: lightgrey;
+        padding: 30px;
+    }
+    #content2 div:nth-child(even){
+        background: skyblue;
+    }
+
+    #content3 div:nth-child(even){
+        background: skyblue;
+    }
 </style>
 <body>
     <h1>1. Column</h1>
-    <h2>设置column</h2>
+    <h2>(1) 设置column</h2>
     <div id="content">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <h2>(2) fr（fraction）</h2>
+    <p>css3中引入了一个新的单位fr（fraction），中文意思为“分数”，用于替代百分比，
+        因为百分比（小数）存在除不尽的情况，
+        用分数表示可以避免多位小数的写法。比如三列等宽的grid可以表示为：
+        grid-template-columns: repeat(3, 1fr);
+    </p>
+    <div id="content2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <h2>(3) repeat</h2>
+    <p>我们也可以用repeat方法来简化column或者row的写法，repeat方法接受两个参数，第一个参数表示重复的次数，第二个参数表示重复的内容。
+        所以，三列等宽的grid我们还可以表示为：
+        `grid-template-columns:` `repeat``(``3``,` `1``fr);`
+        当我们要定义的列数很多时，repeat就会变得非常有用，比如我们要定义一个10列等宽的grid，
+        可以写成repeat(10, 1fr)，而不用将1fr重复书写10遍。</p>
+        
+    <h1>2. Row</h1>
+    <p>可以看到，虽然第四行没有内容，但是row确实存在并占据了那部分空间。</p>
+    <div id="content3">
         <div>1</div>
         <div>2</div>
         <div>3</div>
