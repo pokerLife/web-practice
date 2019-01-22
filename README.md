@@ -9,4 +9,4 @@
 [form]:https://github.com/mHeartbeats/rookie-practice/blob/master/form-beautify/menu.md
 [jsAnimation]:https://github.com/mHeartbeats/rookie-practice/blob/master/js-animations/menu.md
 [react]:https://github.com/pokerLife/rookie-practice/tree/master/react
-[vue-map]:https://github.com/pokerLife/rookie-practice/tree/master/vue/sgcc-app-bus
+[vue-map]:https://github.com/pokerLife/rookie-practice/tree/master/vue/map
