@@ -1,109 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>document.execCommand</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
-    <style>
-      #editor {
-        height: 200px;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>document.execCommand</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  <style>
+    #editor {
+        min-height: 200px;
         width: 100%;
         border: 1px solid #ccc;
+        overflow: auto;
+      }
+      #editor img{
+       /* max-height: 150px; */
       }
       .row div {
         padding: 2%;
       }
     </style>
-    <div class="container" style="margin-top:50px;">
-      <div contenteditable="true" row="3" id="editor">
-        春眠不觉晓，<br />
-        处处闻啼鸟，<br />
-        夜来风雨声，<br />
-        花落知道少。
+  <div class="container" style="margin-top:50px;">
+    <div contenteditable="true" row="3" id="editor">
+      春眠不觉晓，<br />
+      处处闻啼鸟，<br />
+      夜来风雨声，<br />
+      花落知道少。
+    </div>
+    <div class="row">
+      <div class="col-md-1 col-3">
+        <button class="btn btn-info" id="bold">加粗</button>
       </div>
-      <div class="row">
-        <div class="col-md-1 col-3">
-          <button class="btn btn-info" id="bold">加粗</button>
+      <div class="col-md-1 col-3">
+        <button class="btn btn-info" id="italic">倾斜</button>
+      </div>
+      <div class="col-md-1 col-3">
+        <button class="btn btn-info" id="underline">下划线</button>
+      </div>
+      <div class="col-md-1 col-3">
+        <button class="btn btn-info" id="copy">复制</button>
+      </div>
+      <div class="col-md-1 col-3">
+        <button class="btn btn-info" id="cut">剪切</button>
+      </div>
+      <div class="dropdown col-md-1 col-3" id="title">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          h1~h6
+        </button>
+        <div class="dropdown-menu" id="titleList" aria-labelledby="dropdownMenuButton">
+          <button class="dropdown-item" type="button">H1</button>
+          <button class="dropdown-item" type="button">H2</button>
+          <button class="dropdown-item" type="button">H3</button>
+          <button class="dropdown-item" type="button">H4</button>
+          <button class="dropdown-item" type="button">H5</button>
+          <button class="dropdown-item" type="button">H6</button>
         </div>
-        <div class="col-md-1 col-3">
-          <button class="btn btn-info" id="italic">倾斜</button>
-        </div>
-        <div class="col-md-1 col-3">
-          <button class="btn btn-info" id="underline">下划线</button>
-        </div>
-        <div class="col-md-1 col-3">
-          <button class="btn btn-info" id="copy">复制</button>
-        </div>
-        <div class="col-md-1 col-3">
-          <button class="btn btn-info" id="cut">剪切</button>
-        </div>
-        <div class="dropdown col-md-1 col-3" id="title">
-          <button
-            class="btn btn-info dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            h1~h6
-          </button>
-          <div
-            class="dropdown-menu"
-            id="titleList"
-            aria-labelledby="dropdownMenuButton"
-          >
-            <button class="dropdown-item" type="button">H1</button>
-            <button class="dropdown-item" type="button">H2</button>
-            <button class="dropdown-item" type="button">H3</button>
-            <button class="dropdown-item" type="button">H4</button>
-            <button class="dropdown-item" type="button">H5</button>
-            <button class="dropdown-item" type="button">H6</button>
-          </div>
-        </div>
-        <div class="col-md-1 col-3" style="margin-left:12px;">
-          <button class="btn btn-info" id="delete">删除</button>
-        </div>
-        <div class="col-md-1 col-3" style="margin-left:12px;">
-          <button class="btn btn-info" id="delete">插入图片</button>
-        </div>
+      </div>
+      <div class="col-md-1 col-3" style="margin-left:12px;">
+        <button class="btn btn-info" id="delete">删除</button>
+      </div>
+      <div class="col-md-1 col-3" style="margin-left:12px;">
+        <button class="btn btn-info" id="images">插入图片</button>
+      </div>
 
-        <div class="col-md-1 col-3" style="margin-left:12px;">
-          <button class="btn btn-info" id="insertHorizontalRule">
-            插入水平线
-          </button>
-        </div>
+      <div class="col-md-1 col-3" style="margin-left:12px;">
+        <button class="btn btn-info" id="insertHorizontalRule">
+          水平线
+        </button>
+      </div>
+      <div class="col-md-1 col-3" style="margin-left:12px;">
+        <button class="btn btn-info" id="insertOrderedList">
+          有序列表
+        </button>
+      </div>
+      <div class="col-md-1 col-3" style="margin-left:12px;">
+        <button class="btn btn-info" id="insertUnorderedList">
+          无序列表
+        </button>
       </div>
     </div>
-    <script
-      src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./editor.js"></script>
-    <script>
-      const editor = new Editor('editor');
-      editor.initEditor();
-    </script>
-  </body>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="./editor.js"></script>
+  <script>
+    const editor = new Editor('editor');
+    editor.initEditor();
+  </script>
+</body>
+
 </html>
