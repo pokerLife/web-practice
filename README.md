@@ -5,9 +5,11 @@
 * [react练习][react] react练习相关demo
 * [vue+高德地图][vue-map] vue+高德地图实现简单的公交线路查询
 * [vue进阶] vue练习相关demo
-* [canvas动画] cnavas动画学习整理
+* [canvas动画] canvas动画学习整理
+* [css各种技巧][css-skills] css绘制图形、css动画、css布局等等。
 
 [form]:https://github.com/mHeartbeats/rookie-practice/blob/master/form-beautify/menu.md
 [jsAnimation]:https://github.com/mHeartbeats/rookie-practice/blob/master/js-animations/menu.md
 [react]:https://github.com/pokerLife/rookie-practice/tree/master/react
 [vue-map]:https://github.com/pokerLife/rookie-practice/tree/master/vue/map
+[css-skills]:https://github.com/pokerLife/rookie-practice/tree/master/css-skills
