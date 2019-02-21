@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,26 @@
     <title>css-grid入门</title>
 </head>
 <style>
-    body{  
+    body {
         text-align: center;
         max-width: 750px;
         margin: 0 auto;
     }
-    #content{
+
+    #content {
         color: #fff;
         display: grid;
         grid-template-columns: 33.3% 33.3% 33.3%;
         max-width: 960px;
         margin: 0 auto;
     }
-    #content div{
+
+    #content div {
         background: lightgrey;
         padding: 30px;
     }
-    #content div:nth-child(even){
+
+    #content div:nth-child(even) {
         background: skyblue;
     }
 
@@ -37,19 +41,22 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(4, 60px);
     }
-    #content2 div, 
-    #content3 div{
+
+    #content2 div,
+    #content3 div {
         background: lightgrey;
         padding: 30px;
     }
-    #content2 div:nth-child(even){
+
+    #content2 div:nth-child(even) {
         background: skyblue;
     }
 
-    #content3 div:nth-child(even){
+    #content3 div:nth-child(even) {
         background: skyblue;
     }
 </style>
+
 <body>
     <h1>1. Column</h1>
     <h2>(1) 设置column</h2>
@@ -81,7 +88,7 @@
         `grid-template-columns:` `repeat``(``3``,` `1``fr);`
         当我们要定义的列数很多时，repeat就会变得非常有用，比如我们要定义一个10列等宽的grid，
         可以写成repeat(10, 1fr)，而不用将1fr重复书写10遍。</p>
-        
+
     <h1>2. Row</h1>
     <p>可以看到，虽然第四行没有内容，但是row确实存在并占据了那部分空间。</p>
     <div id="content3">
@@ -96,4 +103,5 @@
         <div>9</div>
     </div>
 </body>
+
 </html>

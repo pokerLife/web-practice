@@ -1,0 +1,336 @@
+#content {
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-row-gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto 100px auto;
+    overflow: hidden;
+}
+
+#content div {
+    margin-top: 10px;
+}
+
+/* 圆形 */
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fd5f00;
+}
+
+/* 圆形 */
+.circle-2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50% 0;
+    background-color: #fd5f00;
+}
+
+/* 圆形 */
+.circle-3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 100% 0;
+    background-color: #fd5f00;
+}
+
+/* 圆形 */
+.circle-4 {
+    width: 100px;
+    height: 100px;
+    border-radius: 100% 0 0;
+    background-color: #fd5f00;
+}
+
+/* 圆形 */
+.circle-5 {
+    width: 100px;
+    height: 50px;
+    border-radius: 100px 100px 0 0;
+    background-color: #fd5f00;
+}
+
+/* 圆形 */
+.circle-6 {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    border-radius: 100% 0;
+    transform: rotate(45deg);
+    background-color: #005792;
+}
+
+/* 圆形 */
+.circle-7 {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    transform: rotate(45deg);
+    background-color: #005792;
+}
+
+/* 环形 */
+.ring {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #005792;
+    border-radius: 50%;
+}
+
+/* 环形 */
+.ring2 {
+    width: 60px;
+    height: 85px;
+    border: 10px solid #005792;
+    border-radius: 50%;
+}
+
+/* 环形 */
+.ring5 {
+    width: 100px;
+    height: 100px;
+    border-left: 10px solid #c50d66;
+    border-radius: 50%;
+}
+
+/* 环形 */
+.ring6 {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-left: 10px solid #fd5f00;
+    border-right: 10px solid #fd5f00;
+    border-radius: 50%;
+    background: #f6f6e9;
+}
+
+.ring6::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%);
+    height: 45px;
+    width: 45px;
+    border: 5px solid #1687a7;
+    border-radius: 50%;
+}
+
+.ring6::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%);
+    height: 20px;
+    width: 20px;
+    background: #393E46;
+    border-radius: 100% 0;
+}
+
+
+/* 环形 */
+.ring7 {
+    width: 100px;
+    height: 80px;
+    border-left: 10px solid #ccc;
+    border-top: 10px solid #c50d66;
+    border-right: 10px solid #5BE7C4;
+    border-bottom: 10px solid #FCE38A;
+    border-radius: 50%;
+    align-self: center;
+}
+
+/* 环形 */
+.ring8 {
+    width: 100px;
+    height: 100px;
+    border-left: 10px solid #FCE38A;
+    border-top: 10px solid #FCE38A;
+    border-right: 10px solid #FCE38A;
+    /* border-bottom: 10px solid #FCE38A; */
+    border-radius: 50%;
+    align-self: center;
+}
+
+/* 环形 */
+.ring9 {
+    width: 100px;
+    height: 80px;
+    border-left: 10px solid #ccc;
+    border-right: 10px solid #5BE7C4;
+    border-radius: 100px 0;
+    align-self: center;
+}
+
+/* 环形 */
+.ring10 {
+    width: 100px;
+    height: 50px;
+    border-top: 10px solid #5BE7C4;
+    border-bottom: 10px solid #c50d66;
+    border-radius: 50%;
+    align-self: center;
+}
+
+/* 椭圆1 */
+.ellipse {
+    width: 100px;
+    height: 80px;
+    align-self: center;
+    border-radius: 50%;
+    background-color: #3b9a9c;
+}
+
+/* 椭圆2 */
+.ellipse2 {
+    width: 100px;
+    height: 80px;
+    align-self: center;
+    border-radius: 20px 20px / 100px 10px;
+    background-color: #3b9a9c;
+}
+
+/* 椭圆3 */
+.ellipse3 {
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    background-color: #3b9a9c;
+}
+
+.ellipse4 {
+    width: 100px;
+    height: 50px;
+    border-radius: 100% 0 0 0;
+    background-color: #3b9a9c;
+}
+
+.block {
+    width: 0;
+    height: 0;
+    border-left: 50px solid #3b9a9c;
+    border-top: 50px solid #fef4a9;
+    border-right: 50px solid #78fee0;
+    border-bottom: 50px solid #4bc2c5;
+}
+
+.block1 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid #3b9a9c;
+    border-top: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+
+.block2 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-top: 50px solid #fef4a9;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+
+.block3 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-top: 50px solid transparent;
+    border-right: 50px solid #78fee0;
+    border-bottom: 50px solid transparent;
+}
+
+.block4 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-top: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid #4bc2c5;
+}
+
+.block5 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid #3b9a9c;
+    border-top: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+.block6 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-top: 50px solid #fef4a9;
+    /* border-right: 50px solid #78fee0;  */
+    border-bottom: 50px solid transparent;
+}
+
+.bubble {
+    width: 100px;
+    height: 50px;
+    border: 5px solid #FFB5BF;
+    position: relative;
+}
+
+.common {
+    width: 0;
+    height: 0;
+    position: absolute;
+    /* 使用绝对定位 */
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* 水平居中 */
+}
+
+.triangle {
+    bottom: -20px;
+    border-top: 20px solid #FFB5BF;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+
+.cover {
+    bottom: -13px;
+    border-top: 20px solid #fff;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+
+.block7 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid #393E46;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid #393E46;
+}
+
+.block8 {
+    width: 50px;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid #0072BB;
+}
+
+.block9 {
+    height: 80px;
+    width: 100px;
+    margin-bottom: 20px;
+    background-color: #cf3425;
+    transform: skewX(20deg);
+    transform: skewY(20deg);
+}
+
+.block10 {
+    height: 80px;
+    width: 100px;
+    background-color: #6a60a9;
+    transform: skew(20deg);
+    margin-left: 20px;
+}
