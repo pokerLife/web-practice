@@ -1,23 +1,24 @@
 <template>
   <div id="app">
-    <my-button size="lg"></my-button>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import { Component, Vue } from "vue-property-decorator";
-import Button from "@/components/Button.vue";
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
+  name: 'app',
   components: {
-    "my-button": Button
+    HelloWorld
   }
-};
+}
 </script>
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
